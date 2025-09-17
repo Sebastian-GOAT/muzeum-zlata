@@ -7,7 +7,7 @@
             Logo
         </NuxtLink>
         <div class="flex gap-2 items-center">
-            <Icon name="uil:moon" size="22" />
+            <Icon :name="isDark ? 'uil:moon' : 'uil:sun'" size="22" />
             <USwitch
                 color="primary"
                 v-model="isDark"
@@ -19,9 +19,9 @@
 </template>
 
 <script setup lang="ts">
-const isDark = ref(true);
 const colorMode = useColorMode();
+const isDark = ref(false);
 
-onMounted(() => isDark.value = colorMode.preference === 'dark');
+onMounted(() => isDark.value = colorMode.value === 'dark');
 watch(isDark, newVal => colorMode.preference = newVal ? 'dark' : 'light');
 </script>

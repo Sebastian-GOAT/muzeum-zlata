@@ -34,7 +34,7 @@
     <section class="px-16 py-12 flex justify-center">
         <UTabs
             :items="propertiesData"
-            class="p-4 w-[700px] border-1 border-muted rounded-lg"
+            class="p-4 w-[700px] max-w-9/10 border-1 border-muted rounded-lg"
             variant="link"
             color="primary"
         >
@@ -57,9 +57,9 @@
     <!-- Heading -->
     <Heading title="Využití" />
 
-    <!-- Usage, AI generated images -->
+    <!-- Usage, images -->
     <section class="px-16 py-12 flex flex-col gap-24 justify-center items-center">
-        <div class="w-128 text-lg text-fg-p leading-8">
+        <div class="w-128 max-w-9/10 text-lg text-fg-p leading-8">
             <p>
                 Zlato se používá k výrobě různých věcí. Nejčastěji se jedná o jeden z následujících produktů:
             </p>
@@ -76,13 +76,40 @@
             loop
             arrows
             dots
-            class="w-[650px]"
-            :autoplay="{ delay: 2000 }"
-            :items="AIPictures"
+            auto-scroll
+            class="w-[650px] max-w-full"
+            :items="images"
             :ui="{ item: 'basis-1/3' }"
         >
             <NuxtImg :src="item" width="234" height="234" class="rounded-lg" />
         </UCarousel>
+    </section>
+
+    <!-- Heading -->
+    <Heading title="Světoví těžitelé" />
+
+    <!-- Top global miners -->
+    <section class="px-16 py-12 flex justify-center items-center">
+        <div class="w-128 max-w-9/10 text-lg text-fg-p leading-8 flex flex-col gap-12 justify-center items-center">
+            <p>
+                5 největších světových těžitelů:
+            </p>
+            <UTable :data="globalMinersData" class="w-full" />
+        </div>
+    </section>
+
+    <!-- Heading -->
+    <Heading title="Ekologické dopady a recyklace" />
+
+    <!-- Eco -->
+    <section class="px-16 py-12 flex justify-center items-center">
+        <p class="w-128 max-w-9/10 text-lg text-fg-p leading-8">
+            Při těžbě se často používají toxické chemikálie, což může způsobovat emise a škodu
+            okolní přírodě. Emise jsou také způsobené náročností těžby.
+            <br><br>
+            Recyklovat je důležité pro ochranu přírody a zachování globální hodnoty zlata. Zlato
+            lze recyklovat skoro bez ztráty ceny. Lze tím také vydělat na použitém/starým zlatem
+        </p>
     </section>
 
 </template>
@@ -116,19 +143,42 @@ const propertiesData = [
     }
 ] satisfies TabsItem[];
 
-const propertiesTableData = ref([{
+const propertiesTableData = [{
     'Značka': 'Au',
     'Hustota': '19.32g/cm^2',
     'Bod tání': '1064°C',
     'Bod varu': '2856°C'
-}]);
+}];
 
-const AIPictures = [
+const images = [
+  '/gold_bars.png',
   'https://picsum.photos/468/468?random=1',
   'https://picsum.photos/468/468?random=2',
   'https://picsum.photos/468/468?random=3',
   'https://picsum.photos/468/468?random=4',
-  'https://picsum.photos/468/468?random=5',
-  'https://picsum.photos/468/468?random=6'
+  'https://picsum.photos/468/468?random=5'
+];
+
+const globalMinersData = [
+    {
+        'Společnost': 'Barrick Gold Corporation (Kanada)',
+        'Produkce': '4 700 000 oz/rok'
+    },
+    {
+        'Společnost': 'Newmont Corporation (USA)',
+        'Produkce': '6 000 000 oz/rok'
+    },
+    {
+        'Společnost': 'AngloGold Ashanti (Jižní Afrika)',
+        'Produkce': '3 000 000 oz/rok'
+    },
+    {
+        'Společnost': 'China National Gold Group (Čína)',
+        'Produkce': '2 500 000 oz/rok'
+    },
+    {
+        'Společnost': 'Polyus Gold (Rusko)',
+        'Produkce': '2 800 000 oz/rok'
+    }
 ];
 </script>

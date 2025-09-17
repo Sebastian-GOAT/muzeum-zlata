@@ -1,7 +1,7 @@
 <template>
     <article class="p-4 flex flex-col gap-2">
         <h1 class="text-lg font-medium">{{ $props.title }}</h1>
-        <p class="text-fg-p">
+        <p class="text-fg-p leading-8">
             <slot />
         </p>
     </article>
