@@ -152,11 +152,11 @@ const propertiesTableData = [{
 
 const images = [
   '/gold_bars.png',
+  '/craiyon_1.png',
   'https://picsum.photos/468/468?random=1',
   'https://picsum.photos/468/468?random=2',
   'https://picsum.photos/468/468?random=3',
-  'https://picsum.photos/468/468?random=4',
-  'https://picsum.photos/468/468?random=5'
+  'https://picsum.photos/468/468?random=4'
 ];
 
 const globalMinersData = [
