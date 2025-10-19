@@ -14,7 +14,7 @@
     --primary: #00dc82;
     --secondary: #51A1FE;
 
-    --bg: hsl(0, 0%, 95%);
+    --bg: hsl(0, 0%, 100%);
     --fg: black;
     --fg-p: hsl(0, 0%, 25%);
 }

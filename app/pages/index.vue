@@ -34,7 +34,7 @@
     <section class="px-16 py-12 flex justify-center">
         <UTabs
             :items="propertiesData"
-            class="p-4 w-[700px] max-w-9/10 border-1 border-muted rounded-lg"
+            class="p-4 w-[700px] max-w-9/10 border-1 border-black/30 dark:border-white/30 rounded-lg"
             variant="link"
             color="primary"
         >
@@ -94,6 +94,12 @@
             <p>
                 5 největších světových těžitelů:
             </p>
+            <NuxtImg
+                src="/chart.png"
+                class="w-[min(500px,_80%)] rounded-2xl border-1 border-black"
+                alt="Graf světových těžitelů"
+                
+            />
             <UTable :data="globalMinersData" class="w-full" />
         </div>
     </section>
@@ -122,7 +128,7 @@ definePageMeta({
 useHead({
     title: 'Muzeum zlata',
     meta: [
-        { name: 'description', content: 'Virtuální muzeum zlata – objevte historii, využití a fascinující příběhy jednoho z nejvzácnějších kovů světa. Interaktivní expozice pro školní i osobní poznání.' }
+        { name: 'description', content: 'Virtuální muzeum zlata – objevte jeden z nejvzácnějších kovů světa. Interaktivní online expozice pro osobní poznání.' }
     ]
 });
 
@@ -153,10 +159,9 @@ const propertiesTableData = [{
 const images = [
   '/gold_bars.png',
   '/craiyon_1.png',
-  'https://picsum.photos/468/468?random=1',
-  'https://picsum.photos/468/468?random=2',
-  'https://picsum.photos/468/468?random=3',
-  'https://picsum.photos/468/468?random=4'
+  '/craiyon_2.png',
+  '/craiyon_3.png',
+  '/gold_drawing_1.jpg'
 ];
 
 const globalMinersData = [

@@ -4,7 +4,7 @@
 
         <!-- Logo -->
         <NuxtLink to="/" class="font-extrabold italic">
-            Logo
+            Muzeum Zlata
         </NuxtLink>
         <div class="flex gap-2 items-center">
             <Icon :name="isDark ? 'uil:moon' : 'uil:sun'" size="22" />
